@@ -1,0 +1,2 @@
+SELECT "calendar_events".* FROM "calendar_events" INNER JOIN calendars c ON c.id = calendar_events.calendar_id
+WHERE (c.calendar_slug = 'acme') AND (c.slug = 'geek-calendar') AND (calendar_events.slug = 'may-4') LIMIT 2;

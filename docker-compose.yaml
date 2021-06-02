@@ -1,0 +1,10 @@
+version: "3.4"
+
+services:
+  cockroach20:
+    image: cockroachdb/cockroach:v20.2.10
+    command: start-single-node --insecure
+
+  cockroach21:
+    image: cockroachdb/cockroach:v21.1.1
+    command: start-single-node --insecure

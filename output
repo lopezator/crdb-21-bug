@@ -1,0 +1,49 @@
+➜  crdb-21-bug git:(master) ./bugme.sh
+Creating network "crdb-21-bug_default" with the default driver
+Creating crdb-21-bug_cockroach20_1 ... done
+CREATE TABLEb-21-bug_cockroach21_1 ... done
+CREATE TABLE
+INSERT 1
+INSERT 1
+INSERT 1
+INSERT 1
+CREATE TABLE
+CREATE TABLE
+INSERT 1
+INSERT 1
+INSERT 1
+INSERT 1
+
+Issuing sample queries...
+
+CockroachDB v20.2.10:
+
+id      calendar_id     slug
+1       1       may-4
+
+CockroachDB v21.1.1:
+
+id      calendar_id     slug
+1       1       may-4
+
+Both cockroach versions return a single row, this is OK.
+
+Waiting a minute...
+
+Issuing sample queries again...
+
+CockroachDB v20.10.2:
+
+id      calendar_id     slug
+1       1       may-4
+
+CockroachDB v21.1.1:
+
+id      calendar_id     slug
+
+Magic, the v21.1.1 row is now gone!
+
+If we use LIMIT2, the row gone appears again!
+
+id      calendar_id     slug
+1       1       may-4

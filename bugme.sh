@@ -20,7 +20,7 @@ printf "\nBoth cockroach versions return a single row, this is OK.\n"
 
 # Wait one minute
 printf "\nWaiting a minute...\n"
-sleep 1m
+sleep 60
 
 # Issue queries again
 printf "\nIssuing sample queries again...\n"
